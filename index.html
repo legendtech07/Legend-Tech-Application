@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Legend Tech Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* LOADER STYLES - WILL ANIMATE IMMEDIATELY */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f0f1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        .tech-loader {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+        .tech-particle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #6c5ce7;
+            border-radius: 50%;
+            animation: float 3s infinite ease-in-out;
+        }
+        .tech-particle:nth-child(1) {
+            top: 0;
+            left: 50px;
+            background: #6c5ce7;
+            animation-delay: 0s;
+        }
+        .tech-particle:nth-child(2) {
+            top: 20px;
+            left: 90px;
+            background: #00cec9;
+            animation-delay: 0.2s;
+        }
+        .tech-particle:nth-child(3) {
+            top: 60px;
+            left: 100px;
+            background: #fd79a8;
+            animation-delay: 0.4s;
+        }
+        .tech-particle:nth-child(4) {
+            top: 100px;
+            left: 70px;
+            background: #a29bfe;
+            animation-delay: 0.6s;
+        }
+        .tech-particle:nth-child(5) {
+            top: 100px;
+            left: 30px;
+            background: #00b894;
+            animation-delay: 0.8s;
+        }
+        .tech-particle:nth-child(6) {
+            top: 60px;
+            left: 0;
+            background: #ffeaa7;
+            animation-delay: 1s;
+        }
+        .tech-particle:nth-child(7) {
+            top: 20px;
+            left: 10px;
+            background: #fab1a0;
+            animation-delay: 1.2s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-30px) scale(0.8); opacity: 0.7; }
+        }
+        .loader-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #6c5ce7, #fd79a8, #00cec9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        @keyframes textGlow {
+            0% { filter: drop-shadow(0 0 5px rgba(108, 92, 231, 0.7)); }
+            100% { filter: drop-shadow(0 0 15px rgba(253, 121, 168, 0.9)); }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="loader-container" id="loader">
+        <div class="tech-loader">
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+            <div class="tech-particle"></div>
+        </div>
+        <div class="loader-text">LEGEND TECH</div>
+    </div>
+
+    <!-- MAIN CONTENT (HIDDEN INITIALLY) -->
+    <div class="main-content hidden" id="mainContent">
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1><span class="gradient-text">JOIN</span> THE LEGEND TECH TEAM</h1>
+                <p>Where innovation meets excellence</p>
+                <div class="scroll-down">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Application Form</h2>
+                    <div class="form-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                </div>
+                
+                <form id="applicationForm">
+                    <div class="input-group floating">
+                        <input type="text" id="name" required>
+                        <label for="name">Full Name</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    
+                    <div class="input-group floating">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    
+                    <div class="input-group floating">
+                        <input type="text" id="channel">
+                        <label for="channel">Your Channel/Website</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    
+                    <div class="input-group floating">
+                        <input type="text" id="social">
+                        <label for="social">Social Media Handle</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    
+                    <div class="input-group floating">
+                        <input type="text" id="niche" required>
+                        <label for="niche">Your Niche/Specialization</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    
+                    <div class="input-group floating select">
+                        <select id="availability" required>
+                            <option value=""></option>
+                            <option>Not busy</option>
+                            <option>Little bit busy</option>
+                            <option>Busy</option>
+                            <option>Very busy</option>
+                        </select>
+                        <label>How busy are you?</label>
+                        <div class="input-highlight"></div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>SUBMIT APPLICATION</span>
+                        <div class="submit-loader hidden">
+                            <div class="loader-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="confirmation hidden" id="confirmation">
+            <div class="confirmation-box">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="checkmark">
+                    <svg viewBox="0 0 52 52">
+                        <circle cx="26" cy="26" r="25" fill="none"/>
+                        <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h2>APPLICATION RECEIVED!</h2>
+                <p>Thank you for applying to join Legend Tech</p>
+                <p>We'll review your application and contact you soon</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
